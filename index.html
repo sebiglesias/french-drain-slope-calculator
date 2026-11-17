@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Drain Slope & Elevation Grade Calculator — Gravity Drainage — Accurate Material Estimator</title>
+  <meta name="description" content="Calculate exact elevation drop, trench depth every 10 feet, and gravity flow velocity for French drains, curtain drains, and downspout pipes.">
+  <link rel="canonical" href="https://sebiglesias.com.ar/french-drain-slope-calculator/">
+  <meta name="theme-color" content="#0284c7">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="French Drain Slope & Elevation Grade Calculator — Gravity Drainage">
+  <meta property="og:description" content="Calculate exact elevation drop, trench depth every 10 feet, and gravity flow velocity for French drains, curtain drains, and downspout pipes.">
+  <meta property="og:url" content="https://sebiglesias.com.ar/french-drain-slope-calculator/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BNDBQP0W7');
+  </script>
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-3381238987477190">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "French Drain Slope & Elevation Grade Calculator \u2014 Gravity Drainage",
+    "url": "https://sebiglesias.com.ar/french-drain-slope-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Calculate exact elevation drop, trench depth every 10 feet, and gravity flow velocity for French drains, curtain drains, and downspout pipes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the minimum slope required for a gravity French drain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A French drain requires a minimum downward slope of 1% (which equals 1/8 inch of drop per linear foot, or 1 inch of drop every 8 feet). For high-volume downspout tie-ins, a 2% slope (1/4 inch drop per foot) is ideal to prevent silt and debris from settling in the bottom of the pipe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should you do if your yard is completely flat with no natural slope?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the surface ground is flat, you must dig the trench deeper as you travel away from the house. For a 50-foot trench starting at 18 inches deep, you will manually dig the discharge end down to 24 inches deep to artificially manufacture the necessary 6-inch gravity fall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should the holes in a perforated French drain pipe face UP or DOWN?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always face the holes DOWN! Groundwater naturally rises from beneath the trench as the soil saturates. Perforations facing downward allow rising groundwater to enter the pipe at its lowest point and quickly drain away. If holes face up, water must fill the entire gravel trench before draining."
+        }
+      }
+    ]
+  }
+]
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">💧 Civil Drainage & Grading Standards</div>
+      <h1>French Drain Slope & Fall Calculator</h1>
+      <p class="subtitle">Calculate exact elevation drop grade (1% or 1/8" per foot), line level string measurements, and trench depth for gravity storm drainage.</p>
+    </header>
+
+    <!-- AdSense Top Banner -->
+    <div style="text-align:center; margin: 16px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="calc-grid">
+      <!-- Inputs Card -->
+      <form class="card" id="french-drain-slope-calculator-form" onsubmit="event.preventDefault();">
+        <h2>📐 Trench Run & Desired Slope Grade</h2>
+        
+        <div class="input-row">
+          <div class="form-group">
+            <label for="trenchLen">Total Trench Run Length <span class="hint">High point to discharge</span></label>
+            <div class="input-wrap">
+              <input type="number" id="trenchLen" step="5" min="10" value="50" required>
+              <span class="input-suffix">ft</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="startDepth">High Point Starting Depth <span class="hint">Depth at beginning of trench</span></label>
+            <div class="input-wrap">
+              <input type="number" id="startDepth" step="1" min="10" max="36" value="18" required>
+              <span class="input-suffix">inches</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="slopeGrade">Gravity Slope Gradient</label>
+            <select id="slopeGrade">
+              <option value="1.0" selected>1.0% Slope (1/8" Drop Per Foot — Standard Minimum)</option>
+              <option value="1.5">1.5% Slope (3/16" Drop Per Foot — Moderate Fall)</option>
+              <option value="2.0">2.0% Slope (1/4" Drop Per Foot — High Velocity / Heavy Storms)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dischargeType">Discharge Termination</label>
+            <select id="dischargeType">
+              <option value="daylight" selected>Discharge to Daylight (Surface Pop-Up Emitter)</option>
+              <option value="drywell">Dry Well Infiltration Basin (Flo-Well)</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Results Card -->
+      <div class="card">
+        <h2>🎯 Trench Grading & Cut Depths</h2>
+        
+        <div class="result-hero">
+          <div class="result-label">Total Gravity Elevation Drop</div>
+          <div class="result-number" id="totalDropIn">6.0</div>
+          <div class="result-label" style="color:#ffffff;">Inches of Fall Over 50 Feet</div>
+          <div style="font-size:0.95rem; color:#bae6fd; margin-top:6px;" id="endDepthSummary">Final Discharge Trench Depth: 24.0 Inches</div>
+        </div>
+
+        <div class="sub-hero-grid">
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">Water Flow Velocity</div>
+            <div class="sub-hero-val" id="flowVelocity">≈ 3.2 ft/sec</div>
+            <div class="sub-hero-sub" style="color:#4ade80;">Self-Cleaning Flow Rate</div>
+          </div>
+          <div class="sub-hero-col">
+            <div class="sub-hero-label">String Line Level Drop</div>
+            <div class="sub-hero-val" id="dropPer10">1.2 Inches</div>
+            <div class="sub-hero-sub">Drop every 10-ft interval</div>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-desc">Pipe Invert at 25 ft (Midway)</div>
+            <div class="spec-val" id="midDepth">21.0 Inches Deep</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Drainage Pipe Needed</div>
+            <div class="spec-val" id="pipeLen">50 ft Perforated</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Pop-Up Emitter Required?</div>
+            <div class="spec-val">Yes (NDS Green 4" Spring)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-desc">Gravel Bedding Under Pipe</div>
+            <div class="spec-val">2" Washed #57 Stone</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Amazon Supplies Box -->
+    <section class="supplies-card">
+      <h3>🛠️ Recommended Tools, Hardware & Building Supplies</h3>
+      <div class="supplies-grid">
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Empire Level 360-degree Line Level Set with Cord Hooks</div>
+            <div class="supply-desc">Lightweight durable acrylic line levels snap onto mason string lines to establish a 1% downward slope.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=line+level+string+empire&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">NDS 422G Pop-Up Drainage Emitter with 4-Inch Elbow</div>
+            <div class="supply-desc">Spring-loaded pop-up relief valve opens automatically under water pressure to discharge runoff safely onto turf.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=nds+pop+up+drainage+emitter+4+inch&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Trenching Drain Spade Shovel (4-Inch Contoured Blade)</div>
+            <div class="supply-desc">Narrow 14-gauge tempered steel spade digs clean, straight vertical trench walls without disturbing yard turf.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=trenching+drain+spade+shovel+4+inch&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+        <div class="supply-item">
+          <div>
+            <div class="supply-title">Johnson Level & Tool Self-Leveling Rotary Laser Level Kit</div>
+            <div class="supply-desc">Includes laser detector receiver and grade rod for shot-accurate trench depth measurements outdoors.</div>
+          </div>
+          <a href="https://www.amazon.com/s?k=outdoor+laser+level+with+grade+rod&tag=sebiglesias-20" target="_blank" rel="nofollow noopener" class="btn-amazon">Check on Amazon →</a>
+        </div>
+      </div>
+      <p style="font-size:0.75rem; color:#94a3b8; margin-top:14px; margin-bottom:0; text-align:center;">
+        ⚖️ <em>Affiliate Notice: As an Amazon Associate, this site earns from qualifying purchases at no additional cost to you. We strictly link to trade-grade construction tools, hardware, and safety materials.</em>
+      </p>
+    </section>
+
+    <!-- FAQ Section for SEO -->
+    <section class="faq-section">
+      <h2 style="font-size:1.35rem; color:#ffffff; margin-bottom:16px;">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum slope required for a gravity French drain?</div>
+        <div class="faq-a">A French drain requires a minimum downward slope of 1% (which equals 1/8 inch of drop per linear foot, or 1 inch of drop every 8 feet). For high-volume downspout tie-ins, a 2% slope (1/4 inch drop per foot) is ideal to prevent silt and debris from settling in the bottom of the pipe.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What should you do if your yard is completely flat with no natural slope?</div>
+        <div class="faq-a">If the surface ground is flat, you must dig the trench deeper as you travel away from the house. For a 50-foot trench starting at 18 inches deep, you will manually dig the discharge end down to 24 inches deep to artificially manufacture the necessary 6-inch gravity fall.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should the holes in a perforated French drain pipe face UP or DOWN?</div>
+        <div class="faq-a">Always face the holes DOWN! Groundwater naturally rises from beneath the trench as the soil saturates. Perforations facing downward allow rising groundwater to enter the pipe at its lowest point and quickly drain away. If holes face up, water must fill the entire gravel trench before draining.</div>
+      </div>
+    </section>
+
+    <!-- Bottom AdSense Banner -->
+    <div style="text-align:center; margin: 32px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3381238987477190"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer>
+      <p>© 2026 <a href="https://sebiglesias.com.ar/">sebiglesias.com.ar</a> · French Drain Slope & Elevation Grade Calculator — Gravity Drainage. Educational and trade reference tool.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

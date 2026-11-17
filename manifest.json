@@ -1,0 +1,15 @@
+{
+  "name": "French Drain Slope & Elevation Grade Calculator \u2014 Gravity Drainage",
+  "short_name": "Drain Slope Calc",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#060d16",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
